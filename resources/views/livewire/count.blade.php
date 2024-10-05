@@ -25,7 +25,6 @@
   
   <div class="mt-4">
     .: Informações pessoais :.
-    <p class="font-medium text-gray-400">Name: <span class="font-normal text-gray-100">{{ $name }}</span></p>
-    <p class="font-medium text-gray-400">Last Name: <span class="font-normal text-gray-100">{{ $lastName }}</span></p>
+    <p class="font-medium text-gray-400">Name: <span class="font-normal text-gray-100">{{ $this->fullName() }}</span></p>
   </div>
 </div>

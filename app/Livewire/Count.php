@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Illuminate\View\View;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
 
@@ -37,5 +38,11 @@ class Count extends Component
     public function refresh()
     {
         $this->reset('name', 'lastName');
+    }
+
+    #[Computed]
+    public function fullName()
+    {
+        return "$this->name $this->lastName";
     }
 }

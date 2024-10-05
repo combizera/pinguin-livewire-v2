@@ -161,3 +161,23 @@ public function boot(): void
     ]);
 }
 ```
+
+### Computeds Properties
+
+Podemos criar propriedades computadas no Livewire, que são propriedades que não são armazenadas no banco de dados, mas são calculadas a partir de outras propriedades.
+
+```php
+// Class
+#[Computed]
+public function fullName()
+{
+    return "$this->name $this->lastName";
+}
+
+// View
+<p>{{ $fullName }}</p>
+
+// ao invés de 
+<p>{{ $name }} {{ $lastName }}</p>
+```
+
