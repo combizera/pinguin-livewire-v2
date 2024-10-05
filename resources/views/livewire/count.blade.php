@@ -16,6 +16,13 @@
     Refresh
   </x-primary-button>
   
+  <div x-data="">
+    <span x-text="$wire.name"></span>
+    <x-secondary-button @click="$wire.set('name', 'zezinho')">
+      Change Name
+    </x-secondary-button>
+  </div>
+  
   <div class="mt-4">
     .: Informações pessoais :.
     <p class="font-medium text-gray-400">Name: <span class="font-normal text-gray-100">{{ $name }}</span></p>
