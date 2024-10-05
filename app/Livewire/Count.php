@@ -9,6 +9,11 @@ class Count extends Component
 {
     public int $counter = 0;
 
+    public function mount(): void
+    {
+        $this->counter = 50;
+    }
+
     public function render(): View
     {
         return view('livewire.count');

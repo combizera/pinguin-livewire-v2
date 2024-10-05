@@ -21,3 +21,31 @@ Também é possível criar um componente `inline` que não cria uma `view`, some
 ```bash
 php artisan make:livewire button-inline --inline
 ```
+
+## Propriedades
+
+Para iniciar uma propriedade no Livewire utilizar o método `mount()`.
+
+```php
+public function mount(): void
+{
+    $this->counter = 50;
+}
+```
+
+Dessa forma a propertie `$counter` será iniciada com o valor `50`. Não importa o que passamos antes ou até mesmo na view, ele vai responder com o valor `50`.
+
+```php
+public int $counter = 0;
+
+public function mount(): void
+{
+    $this->counter = 50;
+}
+
+// View
+<livewire:count :counter="10"  />
+
+// Resultado
+50
+```
