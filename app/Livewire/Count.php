@@ -9,9 +9,17 @@ class Count extends Component
 {
     public int $counter = 0;
 
+    public string $name = '';
+
+    public string $lastName = '';
+
     public function mount(): void
     {
-        $this->counter = 50;
+        $this->fill([
+            'counter'   => 50,
+            'name'      => 'Combizera',
+            'lastName'  => 'Dev'
+        ]);
     }
 
     public function render(): View

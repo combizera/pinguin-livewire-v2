@@ -4,4 +4,11 @@
   <x-primary-button wire:click="count">
     +1
   </x-primary-button>
+  
+  <br>
+  <br>
+  
+  Name:: {{ $name }}
+  <br>
+  Last Name:: {{ $lastName }}
 </div>

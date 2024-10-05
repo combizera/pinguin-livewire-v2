@@ -49,3 +49,22 @@ public function mount(): void
 // Resultado
 50
 ```
+
+### Preenchendo em massa as propriedades
+
+Podemos utilizar o método `fill()` para preencher em massa as propriedades.
+
+```php
+public string $name = '';
+
+public string $lastName = '';
+
+public function mount(): void
+{
+    $this->fill([
+        'counter'   => 50,
+        'name'      => 'Combizera',
+        'lastName'  => 'Dev'
+    ]);
+}
+```
