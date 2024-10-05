@@ -119,3 +119,16 @@ public function mount(): void
 }
 ```
 
+### Lock Properties
+ Também é possível travar as propriedades para que não possam ser alteradas. Tem duas formas de fazer isso (inclusive tem como fazer as 2 juntas).
+ 
+[Documentação](https://livewire.laravel.com/docs/properties#security-concerns)
+
+
+A primeira é utilizando o método `lock()`.
+
+```php
+#[Locked]
+public int $counter = 0;
+```
+Já a segunda é utilizando o próprio Laravel com as `polices`.

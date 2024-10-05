@@ -3,10 +3,12 @@
 namespace App\Livewire;
 
 use Illuminate\View\View;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 class Count extends Component
 {
+    #[Locked]
     public int $counter = 0;
 
     public string $name = 'Ygor';
