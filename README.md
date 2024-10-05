@@ -132,3 +132,32 @@ A primeira é utilizando o método `lock()`.
 public int $counter = 0;
 ```
 Já a segunda é utilizando o próprio Laravel com as `polices`.
+
+### Eloquent Model Properties
+
+Quando estamos atualizando algo na tela como no exemplo abaixo, o Livewire mostra para o usuário (claro, poucos que vão ver, porque tem que abrir o `network` do navegador) que está fazendo uma requisição para o servidor e atualizando a página, porém ele também mostra a Model que estamos atualizando.
+
+```bladehtml
+<div>
+  User:: {{ $user->name }}
+  <br>
+  Email:: {{ $user->email }}
+  
+  <x-primary-button wire:click="refresh">
+    Refresh
+  </x-primary-button>
+</div>
+```
+ E para esconder o nome da nossa model é só ir no `AppServiceProvider` e adicionar o seguinte código.
+
+```php
+use App\Models\User;
+use Illuminate\Database\Eloquent\Relations\Relation;
+
+public function boot(): void
+{
+    Relation::morphMap([
+        'user' => User::class
+    ]);
+}
+```
