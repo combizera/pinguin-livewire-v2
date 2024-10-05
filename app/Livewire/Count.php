@@ -9,7 +9,7 @@ class Count extends Component
 {
     public int $counter = 0;
 
-    public string $name = '';
+    public string $name = 'Ygor';
 
     public string $lastName = '';
 
@@ -34,6 +34,6 @@ class Count extends Component
 
     public function refresh()
     {
-
+        $this->reset('name', 'lastName');
     }
 }

@@ -33,7 +33,9 @@ public function mount(): void
 }
 ```
 
-Dessa forma a propertie `$counter` será iniciada com o valor `50`. Não importa o que passamos antes ou até mesmo na view, ele vai responder com o valor `50`.
+Dessa forma a propriedade `$counter` será iniciada com o valor `50`. Não importa o que passamos antes ou até mesmo na view, ele vai responder com o valor `50`.
+
+Isso ocorre porque o método `mount()` é executado quando está sendo montada a página.
 
 ```php
 public int $counter = 0;
@@ -89,6 +91,31 @@ Por fim adicionar o método `refresh()` na classe do componente.
 public function refresh()
 {
     
+}
+```
+
+### Reset Properties
+
+Para resetar as propriedades do componente podemos utilizar o método `reset()`.
+
+```php
+public function refresh()
+{
+    $this->reset('name', 'lastName');
+}
+```
+
+Desta forma quando acionarmos o método `refresh()` as propriedades `name` e `lastName` serão resetadas. Se não passarmos nenhum argumento para o método `reset()` todas as propriedades serão resetadas. Vale ressaltar que se tiver algo setado na propriedade ele será resetado para o valor inicial, não para o valor do `mount()`, porque como dito o `mount()` é executado somente quando carregamos a página.
+
+```php
+// Se utilizarmos o reset() ele vai usar o nome 'Ygor' e não 'Combizera'
+public string $name = 'Ygor';
+
+public function mount(): void
+{
+    $this->fill([
+        'name'      => 'Combizera',
+    ]);
 }
 ```
 
