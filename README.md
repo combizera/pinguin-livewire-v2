@@ -68,3 +68,27 @@ public function mount(): void
     ]);
 }
 ```
+
+### Data Binding
+ O Livewire suporta `data binding` para propriedades. Isso significa que podemos passar valores para as propriedades do componente diretamente da view.
+
+Atualizando a view com um input e botão de refresh
+ 
+```bladehtml
+<p class="mt-10">Atualizar o contador</p>
+<x-text-input wire:model="counter" class="mb-4" />
+
+<x-primary-button wire:click="refresh" class="mb-4">
+Refresh
+</x-primary-button>
+```
+
+Por fim adicionar o método `refresh()` na classe do componente.
+
+```php
+public function refresh()
+{
+    
+}
+```
+

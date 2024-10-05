@@ -31,4 +31,9 @@ class Count extends Component
     {
         $this->counter++;
     }
+
+    public function refresh()
+    {
+
+    }
 }
