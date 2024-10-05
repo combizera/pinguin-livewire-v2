@@ -7,10 +7,15 @@ use Livewire\Component;
 
 class Count extends Component
 {
-    public $name = 1;
+    public int $counter = 0;
 
     public function render(): View
     {
         return view('livewire.count');
+    }
+
+    public function count(): void
+    {
+        $this->counter++;
     }
 }
