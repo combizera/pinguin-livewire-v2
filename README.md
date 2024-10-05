@@ -181,3 +181,8 @@ public function fullName()
 <p>{{ $name }} {{ $lastName }}</p>
 ```
 
+## Actions
+
+Actions são métodos públicos dentro da sua `class`. Quando um evento ocorre, você pode chamar essas ações usando a sintaxe `wire:click`, `wire:submit`, ou outras diretivas de evento do Livewire.
+
+
