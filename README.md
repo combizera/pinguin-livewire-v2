@@ -185,4 +185,28 @@ public function fullName()
 
 Actions são métodos públicos dentro da sua `class`. Quando um evento ocorre, você pode chamar essas ações usando a sintaxe `wire:click`, `wire:submit`, ou outras diretivas de evento do Livewire.
 
+### Loading States
 
+Para adicionar um estado de carregamento em um botão, podemos utilizar o método `loading()`.
+
+Aqui por exemplo estamos utilizando esse span somente quando o a action `calculate()` está sendo executada, e também só durante o período de loading.
+
+```bladehtml
+<span wire:loading wire:target="calculate">
+Calculando... 
+</span>
+```
+
+Também é possível alterar o texto do botão quando ele está em estado de loading.
+
+```bladehtml
+<x-primary-button type="submit" wire:click="calculate">
+    <span wire:loading.class="hidden" wire:target="calculate">
+      Calcular
+    </span>
+    
+    <span wire:loading wire:target="calculate">
+      Calculando 🤔
+    </span>
+</x-primary-button>
+```
