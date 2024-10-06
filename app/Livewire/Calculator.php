@@ -7,7 +7,7 @@ use Livewire\Component;
 class Calculator extends Component
 {
 
-    public float $n1 = 0;
+    public ?string $n1 = null;
 
     public float $n2 = 0;
 
@@ -25,5 +25,11 @@ class Calculator extends Component
         $tmp = "{$this->n1}{$this->operator}{$this->n2};";
 
         $this->result = eval('return ' . $tmp);
+    }
+
+    public function naoQueroY()
+    {
+        $this->n1 = str($this->n1)->replace('y', 'I', true);
+        sleep(3);
     }
 }

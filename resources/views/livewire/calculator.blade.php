@@ -2,6 +2,7 @@
   <x-text-input
     placeholder="Digite o número"
     wire:model="n1"
+    wire:keydown.y="naoQueroY"
     class="p-2 border border-gray-600 rounded-lg w-1/3 bg-gray-700 text-white" />
   
   <select wire:model="operator" class="p-2 border border-gray-600 rounded-lg w-1/12 bg-gray-700 text-white">
