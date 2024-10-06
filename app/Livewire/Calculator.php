@@ -7,7 +7,7 @@ use Livewire\Component;
 class Calculator extends Component
 {
 
-    public ?string $n1 = null;
+    public float $n1 = 0;
 
     public float $n2 = 0;
 
@@ -22,6 +22,7 @@ class Calculator extends Component
 
     public function calculate()
     {
+        sleep(2);
         $tmp = "{$this->n1}{$this->operator}{$this->n2};";
 
         $this->result = eval('return ' . $tmp);
